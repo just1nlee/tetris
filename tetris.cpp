@@ -112,7 +112,7 @@ int main() {
 	bool bForceDown = false;
 	int nPieceCount = 0;
 
-	int nScore;
+	int nScore = 0;
 
 	std::vector<int> vLines;
 
