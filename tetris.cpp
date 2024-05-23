@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <Windows.h> 
 #include <thread>
 #include <chrono>
@@ -219,7 +219,7 @@ int main() {
 		// Draw field
 		for (int x = 0; x < nFieldWidth; x++) {
 			for (int y = 0; y < nFieldHeight; y++) {
-				screen[(y + 2) * nScreenWidth + (x + 2)] = L" ABCDEFG=#"[pField[y * nFieldWidth + x]];
+				screen[(y + 2) * nScreenWidth + (x + 2)] = L" ¤¤¤¤¤¤¤░▓"[pField[y * nFieldWidth + x]];
 			}
 		}
 
@@ -227,10 +227,11 @@ int main() {
 		for (int px = 0; px < 4; px++) {
 			for (int py = 0; py < 4; py++) {
 				if (tetromino[nCurrentPiece][rotate(px, py, nCurrentRotation)] == L'X') {
-					screen[(nCurrentY + py + 2) * nScreenWidth + (nCurrentX + px + 2)] = nCurrentPiece + 65; // ASCII for A
+					screen[(nCurrentY + py + 2) * nScreenWidth + (nCurrentX + px + 2)] = 164; // Assigning the ASCII value directly
 				}
 			}
 		}
+
 
 		// Draw score
 		swprintf_s(&screen[2 * nScreenWidth + nFieldWidth + 6], 16, L"SCORE: %8d", nScore);
